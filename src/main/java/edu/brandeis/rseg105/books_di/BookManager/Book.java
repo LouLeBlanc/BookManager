@@ -18,10 +18,10 @@ public class Book {
 	 * @param price the price to set
 	 */
 	public Book(int id, String isbn, String title, double price) {
-		this.setId(id);
-		this.setIsbn(isbn);
-		this.setTitle(title);
-		this.setPrice(price);
+		this.id = id;
+		this.isbn = isbn;
+		this.title = title;
+		this.price = price;
 	}
 
 	/**
