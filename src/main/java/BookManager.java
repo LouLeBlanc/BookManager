@@ -3,15 +3,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 
 /**
- * Hello world!
+ * Book Manager application driver
  *
  */
 public class BookManager 
 {
 	public static void main( String[] args )
 	{
-		AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(BookManagerConfig.class);
+		ApplicationContext appContext = new AnnotationConfigApplicationContext(BookManagerConfig.class);
 
-		appContext.close();
+		((AnnotationConfigApplicationContext)appContext).close();
 	}
 }

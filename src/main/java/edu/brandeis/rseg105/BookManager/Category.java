@@ -1,4 +1,4 @@
-package edu.brandeis.rseg105.books_di.BookManager;
+package edu.brandeis.rseg105.BookManager;
 
 import java.util.List;
 import java.util.Map;
