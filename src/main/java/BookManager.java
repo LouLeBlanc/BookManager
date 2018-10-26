@@ -1,17 +1,25 @@
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 /**
  * Book Manager application driver
  *
  */
-public class BookManager 
+public class BookManager
 {
 	public static void main( String[] args )
 	{
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(BookManagerConfig.class);
+		GenericXmlApplicationContext appContext = new GenericXmlApplicationContext();
 
-		((AnnotationConfigApplicationContext)appContext).close();
+		appContext.load("classpath:spring/app-context.xml");
+		appContext.refresh();
+
+
+		appContext.close();
+	}
+
+	public static void showBooks() {
+
 	}
 }
+

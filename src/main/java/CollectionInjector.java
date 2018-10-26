@@ -4,10 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-@Configuration
-@ComponentScan("edu.brandeis.rseg105.BookManager")
-@PropertySource("app.properties")
-public class BookManagerConfig {
+public class CollectionInjector {
 
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer() {
