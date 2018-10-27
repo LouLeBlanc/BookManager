@@ -14,16 +14,16 @@ public class BookManager
 {
 
 	public static void main( String[] args ) {
-		List categoryList = new ArrayList<Category>();
+		List<Category> categoryList = new ArrayList<Category>();
 
 		GenericXmlApplicationContext appContext = new GenericXmlApplicationContext();
 
 		appContext.load("classpath:spring/app-context.xml");
 		appContext.refresh();
 
-		categoryList.add((Category) appContext.getBean("Classics"));
-		categoryList.add((Category) appContext.getBean("Novels"));
-		categoryList.add((Category) appContext.getBean("Java"));
+		categoryList.add((Category) appContext.getBean("classics"));
+		categoryList.add((Category) appContext.getBean("novels"));
+		categoryList.add((Category) appContext.getBean("java"));
 
 		for (Object e: categoryList) System.out.println((Category)e);
 
