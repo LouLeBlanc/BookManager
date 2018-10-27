@@ -1,4 +1,4 @@
-package edu.brandeis.rseg105.BookManager;
+package edu.brandeis.rseg105.books;
 
 public class Book {
 	private long id;
@@ -75,6 +75,6 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Id: " + this.id + ", ISBN: " + this.isbn + ", Title: " + this.title + ", Price: " + this.price;
+		return "Book - Id: " + this.id + ", ISBN: " + this.isbn + ", Title: " + this.title + ", Price: " + this.price;
 	}
 }
