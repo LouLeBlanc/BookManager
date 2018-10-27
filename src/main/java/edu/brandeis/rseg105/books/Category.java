@@ -1,4 +1,4 @@
-package edu.brandeis.rseg105.BookManager;
+package edu.brandeis.rseg105.books;
 
 import java.util.List;
 import java.util.Map;
@@ -87,9 +87,48 @@ public class Category {
 	 * @param key the key to add
 	 * @param book the book to add
 	 * @return	the previous value associated with key,
-	 *			or null if there was no mapping for key 
+	 *			or null if there was no mapping for key
 	 */
 	public Book addBookToMap(String key, Book book) {
 		return this.booksMap.put(key, book);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder collectionString = new StringBuilder();
+
+		if (!this.bookSet.isEmpty()) {
+
+			collectionString.append("Category -- Id: " + this.id + ", Name: " + this.name + ", Books Set: [");
+			this.bookSet.forEach((book) -> {
+				collectionString.append(book.toString());
+				collectionString.append(", ");
+			});
+			collectionString.delete(collectionString.length()-3, collectionString.length());
+			collectionString.append("]");
+
+		} else if (!this.booksList.isEmpty()) {
+
+			collectionString.append("Category -- Id: " + this.id + ", Name: " + this.name + ", Books List: [");
+			this.booksList.forEach((book) -> {
+				collectionString.append(book.toString());
+				collectionString.append(", ");
+			});
+			collectionString.delete(collectionString.length()-3, collectionString.length());
+			collectionString.append("]");
+
+		} else if (!this.booksMap.isEmpty()) {
+
+			collectionString.append("Category -- Id: " + this.id + ", Name: " + this.name + ", Books Map: <");
+			this.booksMap.forEach((s, book) -> {
+				collectionString.append("Key" + s + "=");
+				collectionString.append(book.toString());
+				collectionString.append(", ");
+			});
+			collectionString.delete(collectionString.length()-3, collectionString.length());
+			collectionString.append(">");
+
+		}
+		return collectionString.toString();
 	}
 }
