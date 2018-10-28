@@ -1,6 +1,11 @@
 /**
- *
+ * Written by Louis LeBlanc
+ * For Homework Assignment 1
+ * Expert Software Development in Java
+ * Brandeis University
+ * Instructed by Vitaly Yurik
  */
+
 package edu.brandeis.rseg105.BookManager;
 
 import java.util.ArrayList;

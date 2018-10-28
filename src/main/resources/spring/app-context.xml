@@ -3,6 +3,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- 
+	Written by Louis LeBlanc
+	For Homework Assignment 1
+	Expert Software Development in Java
+	Brandeis University
+	Instructed by Vitaly Yurik
+	 -->
+
 	<bean id="effective-java" class="edu.brandeis.rseg105.BookManager.Book">
 		<property name="id" value="1"/>
 		<property name="isbn" value="9780134685997"/>

@@ -3,6 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 		http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+	<!-- 
+	Written by Louis LeBlanc
+	For Homework Assignment 1
+	Expert Software Development in Java
+	Brandeis University
+	Instructed by Vitaly Yurik
+	 -->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.brandeis.rseg105</groupId>
 	<artifactId>BookManager</artifactId>
