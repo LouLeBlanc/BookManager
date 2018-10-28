@@ -1,27 +1,56 @@
-package edu.brandeis.rseg105.books;
+/**
+ * 
+ */
+package edu.brandeis.rseg105.BookManager;
 
+import org.springframework.stereotype.Component;
+
+/**
+ * @author Louis LeBlanc
+ *
+ */
+@Component
 public class Book {
-	private long id;
+	private long   id;
 	private String isbn;
 	private String title;
-	double price;
+	private float  price;
 
 	/**
-	 * Create a default book object
+	 * Default Book
 	 */
-	public Book() { }
+	public Book() {
+		this.id = (long)0;
+		this.isbn = "";
+		this.title = "";
+		this.price = (float)0.00;
+	}
+
 	/**
-	 * Create a book with the specified values
-	 * @param id the id to set
-	 * @param isbn the isbn to set
-	 * @param title the title to set
-	 * @param price the price to set
+	 * @param id
+	 * @param isbn
+	 * @param title
+	 * @param price
 	 */
-	public Book(int id, String isbn, String title, double price) {
+	public Book(long id, String isbn, String title, float price) {
 		this.id = id;
 		this.isbn = isbn;
 		this.title = title;
 		this.price = price;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	/**
@@ -30,51 +59,48 @@ public class Book {
 	public String getIsbn() {
 		return isbn;
 	}
+
 	/**
 	 * @param isbn the isbn to set
 	 */
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(long id) {
-		this.id = id;
-	}
+
 	/**
 	 * @return the title
 	 */
 	public String getTitle() {
 		return title;
 	}
+
 	/**
 	 * @param title the title to set
 	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	/**
 	 * @return the price
 	 */
-	public double getPrice() {
+	public float getPrice() {
 		return price;
 	}
+
 	/**
 	 * @param price the price to set
 	 */
-	public void setPrice(double price) {
+	public void setPrice(float price) {
 		this.price = price;
 	}
 
+	/*
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "Book - Id: " + this.id + ", ISBN: " + this.isbn + ", Title: " + this.title + ", Price: " + this.price;
 	}
+
 }

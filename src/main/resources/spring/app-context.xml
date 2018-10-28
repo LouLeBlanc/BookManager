@@ -1,63 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="effective-java" class="edu.brandeis.rseg105.books.Book">
+	<bean id="effective-java" class="edu.brandeis.rseg105.BookManager.Book">
 		<property name="id" value="1"/>
 		<property name="isbn" value="9780134685997"/>
 		<property name="price" value="54.99"/>
 		<property name="title" value="Effective Java"/>
 	</bean>
 
-	<bean id="pro-spring" class="edu.brandeis.rseg105.books.Book">
+	<bean id="pro-spring" class="edu.brandeis.rseg105.BookManager.Book">
 		<property name="id" value="2"/>
 		<property name="isbn" value="9781484228074"/>
 		<property name="price" value="49.99"/>
 		<property name="title" value="Pro Spring 5"/>
 	</bean>
 
-	<bean id="sherlock" class="edu.brandeis.rseg105.books.Book">
+	<bean id="sherlock" class="edu.brandeis.rseg105.BookManager.Book">
 		<property name="id" value="3"/>
 		<property name="isbn" value="9781402712173"/>
 		<property name="price" value="5.95"/>
 		<property name="title" value="The Adventures of Sherlock Holmes"/>
 	</bean>
 
-	<bean id="oliver-twist" class="edu.brandeis.rseg105.books.Book">
+	<bean id="oliver-twist" class="edu.brandeis.rseg105.BookManager.Book">
 		<property name="id" value="4"/>
 		<property name="isbn" value="9781402726651"/>
 		<property name="price" value="4.95"/>
 		<property name="title" value="Oliver Twist"/>
 	</bean>
 
-	<bean id="hunger-games" class="edu.brandeis.rseg105.books.Book">
-		<property name="id" value="5"/>
-		<property name="isbn" value="9780439023528"/>
-		<property name="price" value="8.99"/>
-		<property name="title" value="The Hunger Games"/>
-	</bean>
-
-	<bean id="catching-fire" class="edu.brandeis.rseg105.books.Book">
-		<property name="id" value="6"/>
-		<property name="isbn" value="9780439023498"/>
-		<property name="price" value="17.99"/>
-		<property name="title" value="Oliver Twist"/>
-	</bean>
-
-	<bean id="classics" class="edu.brandeis.rseg105.books.Category">
-		<property name="id" value="1"/>
-		<property name="name" value="Classics"/>
-	</bean>
-
-	<bean id="novels" class="edu.brandeis.rseg105.books.Category">
+	<bean id="novels" class="edu.brandeis.rseg105.BookManager.Category">
 		<property name="id" value="2"/>
 		<property name="name" value="Novels"/>
+		<property name="booksList">
+			<list>
+				<!-- Create Book beans directly -->
+				<bean id="hunger-games" class="edu.brandeis.rseg105.BookManager.Book">
+					<property name="id" value="5"/>
+					<property name="isbn" value="9780439023528"/>
+					<property name="price" value="8.99"/>
+					<property name="title" value="The Hunger Games"/>
+				</bean>
+				<bean id="catching-fire" class="edu.brandeis.rseg105.BookManager.Book">
+					<property name="id" value="6"/>
+					<property name="isbn" value="9780439023498"/>
+					<property name="price" value="17.99"/>
+					<property name="title" value="Catching Fire"/>
+				</bean>
+			</list>
+		</property>
 	</bean>
 
-	<bean id="java" class="edu.brandeis.rseg105.books.Category">
+	<bean id="java" class="edu.brandeis.rseg105.BookManager.Category">
 		<property name="id" value="3"/>
 		<property name="name" value="Java"/>
+		<property name="booksMap">
+			<map>
+				<entry key="1" value-ref="effective-java"/>
+				<entry key="2" value-ref="pro-spring"/>
+			</map>
+		</property>
 	</bean>
 
+	<bean id="classics" class="edu.brandeis.rseg105.BookManager.Category">
+		<property name="id" value="1"/>
+		<property name="name" value="Classics"/>
+		<property name="booksSet">
+			<set>
+				<ref bean="sherlock"/>
+				<ref bean="oliver-twist"/>
+			</set>
+		</property>
+	</bean>
 </beans>
